@@ -106,6 +106,7 @@ jobs:
         mkdir -p ../../deployment
         cd ../../deployment
         git clone https://${{ secrets.BCZUDEK_ARGO_PAT }}@github.com/bczudek/argo-r3-deployment.git
+        cd argo-r3-deployment
         git config --global user.email "githubactions@github.com"
         git config --global user.name "GitHub Actions"
         git config pull.rebase false
