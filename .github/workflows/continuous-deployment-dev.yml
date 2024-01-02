@@ -106,15 +106,14 @@ jobs:
         mkdir -p ../../deployment
         cd ../../deployment
         git clone https://${{ secrets.BCZUDEK_ARGO_PAT }}@github.com/bczudek/argo-r3-deployment.git
-        cd deployment
         git config --global user.email "githubactions@github.com"
         git config --global user.name "GitHub Actions"
         git config pull.rebase false
         git checkout -B ${{ inputs.branch_name }}
         git pull origin ${{ inputs.branch_name }} || echo "Nothing to pull"
 
-        mkdir -p ./${{ github.repository }}
-        rm -rf ./${{ github.repository }}/*
+        mkdir -p ${{ github.repository }}
+        rm -rf ${{ github.repository }}/*
         cp -r $GITHUB_WORKSPACE/ci-cd/helm-template/* ${{ github.repository }}
 
         git add .
