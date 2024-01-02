@@ -8,9 +8,10 @@ image:
   image_repository: r1.nginx
   environment: prod-
   version_major: '1'
-  version_minor: '14'
-  version_patch: '4288672'
+  version_minor: '0'
+  version_patch: '0'
   pullPolicy: Always
+
 serviceAccount:
   name: r1-nginx
 labels:
