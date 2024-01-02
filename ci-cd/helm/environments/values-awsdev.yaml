@@ -8,8 +8,8 @@ image:
   image_repository: r1.nginx
   environment: dev-
   version_major: '1'
-  version_minor: '7'
-  version_patch: 22048ee
+  version_minor: '8'
+  version_patch: 04c11a0
   pullPolicy: Always
 serviceAccount:
   name: r1-nginx
