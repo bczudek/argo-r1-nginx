@@ -73,6 +73,7 @@ jobs:
         docker push $IMAGE_REF_PROD
 
     - name: Publish deployment to local repository
+      if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref_name == 'main' }}
       run: |
         git config --global user.email "githubactions@github.com"
         git config --global user.name "GitHub Actions"
