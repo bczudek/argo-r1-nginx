@@ -113,10 +113,11 @@ jobs:
         git checkout -B ${{ inputs.branch_name }}
         git pull origin ${{ inputs.branch_name }} || echo "Nothing to pull"
 
-        mkdir -p ${{ github.repository }}
-        rm -rf ${{ github.repository }}/*
-        cp -r $GITHUB_WORKSPACE/ci-cd/helm-template/* ${{ github.repository }}
+        mkdir -p argo-r1-nginx
+        rm -rf argo-r1-nginx/*
+        cp -r $GITHUB_WORKSPACE/ci-cd/helm-template/* argo-r1-nginx
 
         git add .
-        git commit -m "Version: ${{ github.repository }}:${{ inputs.version_full }}"
-        git push -u origin ${{ inputs.branch_name }}
+        git commit -m "Version: argo-r1-nginx:${{ inputs.version_full }}"
+        git tag -a "argo-r1-nginx:${{ inputs.version_full }}" -m "Latest tag on dev"
+        git push -u origin ${{ inputs.branch_name }} --tags
