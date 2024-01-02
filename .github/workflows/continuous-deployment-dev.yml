@@ -119,5 +119,5 @@ jobs:
 
         git add .
         git commit -m "Version: argo-r1-nginx:${{ inputs.version_full }}"
-        git tag -a "v${{ inputs.version_full }}" -m "Latest tag on dev"
+        git tag -a "argo-r1-nginx-${{ inputs.version_full }}" -m "Latest tag on dev for argo-r1-nginx"
         git push -u origin ${{ inputs.branch_name }} --tags
