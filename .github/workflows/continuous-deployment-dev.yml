@@ -55,7 +55,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.BJCE_PAT }}
+        token: ${{ secrets.BCZUDEK_ARGO_PAT }}
       
     - name: Verify HEAD
       run: |
