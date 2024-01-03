@@ -38,7 +38,6 @@ Selector labels
 {{- define "r1-nginx.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "r1-nginx.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-gft.com/environment: {{ .Values.labels.environment }}
 {{- end }}
 
 {{/*
